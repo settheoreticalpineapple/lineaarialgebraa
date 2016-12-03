@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <title>Lineaarialgebran hyödyntäminen CSS-kielessä</title>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Source+Code+Pro" rel="stylesheet" />
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="hyphenator.js"></script>
     <style type="text/css">
         * {margin: 0; padding: 0; border: 0;}
         article, aside, details, figure, footer, header, main, nav, section, summary {display: block;}
@@ -11,17 +13,38 @@
             font-family: "Fipps";
             src: url("Fipps-Regular.otf");
         }
+        @font-face {
+            font-family: "Pixoosy";
+            src: url("pixoosy.ttf");
+        }
         h1 {
-            font-family: "Fipps";
-            font-size: 24px;
+            /*font-family: "Fipps";*/
+            font-size: 2.5rem;
             line-height: 48px;
             margin-bottom: 16px;
+            font-variant: small-caps;
+        }
+        p:not(:first-child) {
+            text-indent: 1em;
+        }
+        p:first-child::first-letter {
+            float: left;
+            font-size: 6em;
+            line-height: 6em;
+            display: inline-block;
+            padding-right: 0.15rem;
+        }
+        code {
+            font-family: "Source Code Pro", monospace;
+            background: rgba(255, 255, 255, 0.2);
         }
         body {
-            font-family: "Courier New";
+            font-family: "Alegreya", serif;
             background-image: linear-gradient(to top left, #ffb74d, #d4e157);
             min-height: 100vh;
             padding: 16px;
+            font-size: 1.2rem;
+            text-align: justify;
         }
         body > * {
             width: 640px;
@@ -37,15 +60,30 @@
         body > main {background-color: #81c784; border-color: #1b5e20;}
         body > footer {background-color: #64b5f6; border-color: #0d47a1;}
         body > header, body > footer {text-align: center;}
+        body > main {}
     </style>
 </head>
 <body>
     <header>
         <h1>Lineaarialgebran hyödyntäminen CSS-kielessä</h1>
     </header>
-    <main></main>
+    <main>
+        <p>Lineaarialgebralla on monia käyttökohteita, ja yhteen niistä voi törmätä selatessaan internetissä möllöttäviä
+        web-sivuja, kuten tämä, jota juuri luet. <em>Cascading Style Sheets</em> (CSS) on kuvauskieli, jota käytetään
+        HTML-sivujen ulkoasun määrittelemiseen. Uusimmissa spesifikaatioissa on määritelty ominaisuus
+        (<em>property</em>) <code>transform</code>, jonka arvo (<em>value</em>) on jokin transform-funktio.
+        <code>transform</code>-ominaisuutta käytetään muuttamaan DOM-elementtien (laatikoiden, joista nettisivut
+        muodostuvat) muotoa &mdash; ja tämä tehdään käyttämällä jonkinlaista lineaarikuvausta (tai affiinia kuvausta,
+        mikäli elementti siirretään pois alkuperäiseltä paikaltaan). Elementtiä voi esimerkiksi kiertää, kääntää ja
+        peilata.</p>
+        <p>Yksi näistä transform-funktioista, eli ”lineaarikuvauksista”, joilla elementtien muotoa muutetaan, on
+        <code>matrix3d</code>, jonka argumentiksi annetaan käytännössä 4×4-matriisi, joka määrää täysin, miten elementti
+        kuvautuu lineaarikuvauksessa. Matriisin toiminta ei ole aivan yksinkertainen, sillä se käyttää homogeenisia
+        koordinaatteja avaruudessa ℝ<sup>3</sup>. (Viikon 5 tehtävässä 13 käsiteltiin homogeenisia koodinaatteja
+        avaruudessa ℝ<sup>2</sup>.)</p>
+    </main>
     <footer>
-        © 2016 <a href="http://settheoreticalpineapple.github.io/">Joni Puljujärvi</a>
+        (C) 2016 <a href="http://settheoreticalpineapple.github.io/">Joni Puljujärvi</a>
     </footer>
 </body>
 </html>
