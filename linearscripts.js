@@ -14,25 +14,30 @@ var interval = setInterval(function(){
                         setTimeout(function () {
                             linear(3);
                             setTimeout(function () {
-                                var uusiNappula = document.createElement("div");
-                                uusiNappula.appendChild(document.createTextNode("Klikkaa tästä sivu alkutilaansa."));
-                                uusiNappula.className = "nappula";
-                                document.getElementsByTagName("body")[0].appendChild(uusiNappula);
-                                var i = 0;
-                                var transparencyAnimation = setInterval(function() {
-                                    if (i == 100) {
-                                        clearInterval(transparencyAnimation);
-                                    } else {
-                                        i++;
-                                        uusiNappula.style.opacity = i/100;
-                                    }
-                                },5);
-                                uusiNappula.onclick = function() {
-                                    linear(4);
-                                    setTimeout(function() {
-                                        uusiNappula.parentNode.removeChild(uusiNappula);
-                                    }, 600);
-                                };
+                                if (document.getElementsByClassName("nappula").length == 0) {
+                                    var uusiNappula = document.createElement("div");
+                                    document.getElementsByTagName("body")[0].appendChild(uusiNappula);
+                                    uusiNappula.className = "nappula";
+                                    uusiNappula.appendChild(document.createTextNode("Klikkaa tästä sivu alkutilaansa."));
+                                    var i = 0;
+                                    var transparencyAnimation = setInterval(function() {
+                                        if (i == 100) {
+                                            clearInterval(transparencyAnimation);
+                                        } else {
+                                            i++;
+                                            uusiNappula.style.opacity = i/100;
+                                        }
+                                    }, 5);
+                                    uusiNappula.onclick = function() {
+                                        linear(4);
+                                        setTimeout(function() {
+                                            var nappulat = document.getElementsByClassName("nappula");
+                                            for (var j = 0; j < nappulat.length; j++) {
+                                                nappulat[j].parentNode.removeChild(nappulat[j]);
+                                            }
+                                        }, 600);
+                                    };
+                                }
                             }, 2000);
                         }, 1500);
                     }, 1500);
