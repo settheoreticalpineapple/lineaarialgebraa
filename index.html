@@ -3,69 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Lineaarialgebran hyödyntäminen CSS-kielessä</title>
-    <link href="https://fonts.googleapis.com/css?family=Alegreya|Source+Code+Pro" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Source+Code+Pro" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="hyphenator.js"></script>
-    <style type="text/css">
-        * {margin: 0; padding: 0; border: 0;}
-        article, aside, details, figure, footer, header, main, nav, section, summary {display: block;}
-        @font-face {
-            font-family: "Fipps";
-            src: url("Fipps-Regular.otf");
-        }
-        @font-face {
-            font-family: "Pixoosy";
-            src: url("pixoosy.ttf");
-        }
-        h1 {
-            /*font-family: "Fipps";*/
-            font-size: 2.5rem;
-            line-height: 48px;
-            margin-bottom: 16px;
-            font-variant: small-caps;
-        }
-        p:not(:first-child) {
-            text-indent: 1em;
-        }
-        p:first-child::first-letter {
-            float: left;
-            font-size: 6em;
-            line-height: 6em;
-            display: inline-block;
-            padding-right: 0.15rem;
-        }
-        code {
-            font-family: "Source Code Pro", monospace;
-            background: rgba(255, 255, 255, 0.2);
-        }
-        body {
-            font-family: "Alegreya", serif;
-            background-image: linear-gradient(to top left, #ffb74d, #d4e157);
-            min-height: 100vh;
-            padding: 16px;
-            font-size: 1.2rem;
-            text-align: justify;
-        }
-        body > * {
-            width: 640px;
-            margin: 0 auto 16px;
-            border-width: 8px;
-            border-style: solid;
-            border-radius: 4px;
-            box-sizing: border-box;
-            padding: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.75), 0 0 8px rgba(0,0,0,0.5) inset;
-        }
-        body > header {background-color: #e57373; border-color: #b71c1c;}
-        body > main {background-color: #81c784; border-color: #1b5e20;}
-        body > footer {background-color: #64b5f6; border-color: #0d47a1;}
-        body > header, body > footer {text-align: center;}
-        body > main {}
-    </style>
+    <script type="text/javascript" src="linearscripts.js"></script>
 </head>
 <body>
     <header>
         <h1>Lineaarialgebran hyödyntäminen CSS-kielessä</h1>
+        <h2>TL;DR: Klikkaa nappulaa.</h2>
     </header>
     <main>
         <p>Lineaarialgebralla on monia käyttökohteita, ja yhteen niistä voi törmätä selatessaan internetissä möllöttäviä
@@ -81,6 +28,7 @@
         kuvautuu lineaarikuvauksessa. Matriisin toiminta ei ole aivan yksinkertainen, sillä se käyttää homogeenisia
         koordinaatteja avaruudessa ℝ<sup>3</sup>. (Viikon 5 tehtävässä 13 käsiteltiin homogeenisia koodinaatteja
         avaruudessa ℝ<sup>2</sup>.)</p>
+        <div id="nappula">Tökkää tätä nappulaa, niin jänniä alkaa tapahtua.</div>
     </main>
     <footer>
         (C) 2016 <a href="http://settheoreticalpineapple.github.io/">Joni Puljujärvi</a>
