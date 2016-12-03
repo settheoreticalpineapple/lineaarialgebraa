@@ -36,11 +36,12 @@ code {
 body {
     font-family: "Alegreya", serif;
     background-image: linear-gradient(to top left, #ffb74d, #d4e157);
-    min-height: 101vh;
+    min-height: calc(100vh + 2px);
     padding: 16px;
     font-size: 1.2rem;
     text-align: justify;
     position: relative;
+    overflow-x: hidden;
 }
 body > * {
     width: 640px;
